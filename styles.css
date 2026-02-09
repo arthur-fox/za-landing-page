@@ -293,61 +293,85 @@ h1, h2, h3, h4 {
   line-height: 1.8;
 }
 
-/* --- About --- */
+/* --- Founders --- */
 .section--about {
   background: var(--bg-secondary);
 }
 
-.about-grid {
+.founders-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-.about-grid__avatar {
-  position: relative;
-}
-
-.about-grid__img {
-  width: 200px;
-  height: 200px;
+.founder-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  padding: 40px 28px 36px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.founder-card:hover {
+  border-color: var(--accent-secondary);
+  transform: translateY(-4px);
+}
+
+.founder-card__img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   border: 3px solid var(--accent-secondary);
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.2), 0 0 80px rgba(110, 231, 231, 0.08);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(110, 231, 231, 0.06);
   object-fit: cover;
-}
-
-.about-grid__text p {
-  color: var(--text-secondary);
   margin-bottom: 20px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 800px;
 }
 
-.about-grid__highlights {
-  list-style: none;
-  margin-top: 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.about-grid__highlights li {
-  position: relative;
-  padding-left: 24px;
-  font-size: 0.95rem;
+.founder-card__name {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
   color: var(--text-primary);
 }
 
-.about-grid__highlights li::before {
+.founder-card__role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.founder-card__bio {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.founder-card__highlights {
+  list-style: none;
+  text-align: left;
+}
+
+.founder-card__highlights li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.founder-card__highlights li::before {
   content: '\2666';
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.7rem;
-  top: 4px;
+  font-size: 0.6rem;
+  top: 9px;
 }
 
 /* --- Features Grid --- */
@@ -620,19 +644,8 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
-  .about-grid {
+  .founders-grid {
     grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .about-grid__text p {
-    text-align: left;
-  }
-
-  .about-grid__highlights {
-    grid-template-columns: 1fr;
-    text-align: left;
   }
 
   .pricing-box {
