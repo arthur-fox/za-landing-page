@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZenAcademy 2.0 — Crypto Meets AI</title>
+  <title>The Stoa of AI — Crypto Meets AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-theme="garden">
 
   <!-- NAV -->
   <nav class="nav">
     <div class="nav__left">
       <div class="theme-switcher">
-        <button class="theme-btn theme-btn--active" data-theme="zen">ZenAcademy</button>
-        <button class="theme-btn" data-theme="garden">AI Garden</button>
+        <button class="theme-btn theme-btn--active" data-theme="garden">The Stoa of AI</button>
+        <button class="theme-btn" data-theme="zen">ZenAcademy</button>
       </div>
     </div>
     <a href="#founding" class="nav__cta">Become a Founding Member</a>
@@ -24,9 +24,9 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero__badge">Introducing ZenAcademy 2.0</div>
-    <h1 class="hero__title">Where Crypto<br>Meets AI</h1>
-    <p class="hero__sub">The frontier of wealth creation is at the intersection of crypto and artificial intelligence. ZenAcademy is evolving — and the first 50 founding members lock in the lowest price forever.</p>
+    <div class="hero__badge" data-zen="Introducing ZenAcademy 2.0" data-garden="Introducing The Stoa of AI">Introducing The Stoa of AI</div>
+    <h1 class="hero__title" data-zen="Where Crypto&lt;br&gt;Meets AI" data-garden="Where Crypto&lt;br&gt;Meets AI">Where Crypto<br>Meets AI</h1>
+    <p class="hero__sub" data-zen="The frontier of wealth creation is at the intersection of crypto and artificial intelligence. ZenAcademy is evolving — and the first 50 founding members lock in the lowest price forever." data-garden="The frontier of wealth creation is at the intersection of crypto and artificial intelligence. The Stoa of AI is where ancient wisdom meets modern technology — and the first 50 founding members lock in the lowest price forever.">The frontier of wealth creation is at the intersection of crypto and artificial intelligence. The Stoa of AI is where ancient wisdom meets modern technology — and the first 50 founding members lock in the lowest price forever.</p>
     <a href="#founding" class="btn btn--primary">Join as a Founding Member &mdash; $29/mo</a>
     <p class="hero__note">Only <span id="spots-hero">50</span> founding spots available</p>
   </header>
@@ -311,6 +311,14 @@
         } else {
           document.body.dataset.theme = theme;
         }
+        // Swap themed text content
+        document.querySelectorAll('[data-' + theme + ']').forEach(el => {
+          el.innerHTML = el.getAttribute('data-' + theme);
+        });
+        // Update page title
+        document.title = theme === 'garden'
+          ? 'The Stoa of AI — Crypto Meets AI'
+          : 'ZenAcademy 2.0 — Crypto Meets AI';
       });
     });
   </script>
