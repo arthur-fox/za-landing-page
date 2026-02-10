@@ -1,5 +1,5 @@
 /* ============================================
-   ZenAcademy 2.0 Landing Page
+   The Stoa of AI Landing Page
    Dark theme, elegant, minimal
    ============================================ */
 
@@ -298,8 +298,10 @@ h1, h2, h3, h4 {
 
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .two-col__card {
@@ -712,7 +714,26 @@ h1, h2, h3, h4 {
   color: var(--text-muted);
 }
 
-/* --- Theme: AI Stoa (Ancient Greek — light marble & gold) --- */
+/* --- Theme: ZenAcademy (purple/cyan) --- */
+[data-theme="zen"] {
+  --bg-primary: #0d0b1a;
+  --bg-secondary: #13102a;
+  --bg-card: #1a1535;
+  --bg-card-hover: #211b42;
+  --text-primary: #f0eaff;
+  --text-secondary: #b0a8c8;
+  --text-muted: #6e6590;
+  --accent: #6ee7e7;
+  --accent-light: #9ef3f3;
+  --accent-dark: #4abfbf;
+  --accent-secondary: #a855f7;
+  --accent-secondary-light: #c084fc;
+  --border: #2d2650;
+  --gradient-hero: linear-gradient(160deg, #0d0b1a 0%, #1a1040 30%, #2d1860 60%, #1a1040 80%, #0d0b1a 100%);
+  --bg-nav: rgba(13, 11, 26, 0.88);
+}
+
+/* --- Theme: The Stoa of AI (light marble & gold) --- */
 [data-theme="garden"] {
   --bg-primary: #fafafa;
   --bg-secondary: #f3f2f0;
