@@ -522,15 +522,42 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-.pricing-box {
-  max-width: 520px;
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.pricing-box {
   background: var(--bg-card);
-  border: 1px solid var(--accent-dark);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 56px 48px;
+  padding: 48px 36px;
   position: relative;
   overflow: hidden;
+}
+
+.pricing-box--featured {
+  border-color: var(--accent);
+  transform: scale(1.03);
+  box-shadow: 0 8px 40px rgba(110, 231, 231, 0.12);
+}
+
+.pricing-box__recommended {
+  position: absolute;
+  top: 16px;
+  right: -32px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 40px;
+  transform: rotate(45deg);
 }
 
 .pricing-box::before {
@@ -780,6 +807,10 @@ h1, h2, h3, h4 {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
+[data-theme="garden"] .pricing-box--featured {
+  box-shadow: 0 8px 40px rgba(184, 134, 11, 0.15);
+}
+
 [data-theme="garden"] .btn--primary {
   color: #ffffff;
 }
@@ -830,6 +861,14 @@ h1, h2, h3, h4 {
 
   .founders-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-box--featured {
+    transform: none;
   }
 
   .pricing-box {
